@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav class="topbar" th:fragment="nav">
+  <a class="brand" th:href="@{/dashboard}"><span class="brand-mark">AI</span><span>Resume<span class="brand-light">Analyzer</span></span></a>
+  <div class="nav-links">
+    <a th:href="@{/dashboard}">Dashboard</a>
+    <a th:href="@{/history}">History</a>
+    <a th:if="${isAdmin}" th:href="@{/admin}">Admin</a>
+    <form th:action="@{/logout}" method="post"><button class="nav-logout" type="submit">Sign out</button></form>
+  </div>
+</nav>
+</body>
+</html>

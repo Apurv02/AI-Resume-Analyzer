@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sign in · AI Resume Analyzer</title><link rel="stylesheet" th:href="@{/css/app.css}"></head>
+<body class="auth-body">
+<div class="auth-shell">
+  <section class="auth-intro"><a class="brand brand-white" th:href="@{/login}"><span class="brand-mark">AI</span>Resume Analyzer</a><div><span class="eyebrow">CAREER TOOLS, REIMAGINED</span><h1>Make your next application <em>stronger.</em></h1><p>Compare your resume with a job description and get clear, practical feedback.</p><ul class="feature-list"><li>Smart resume-to-role matching</li><li>AI-powered feedback and skill insights</li><li>Your analysis history in one place</li></ul></div><span class="intro-foot">A clearer view of your next opportunity.</span></section>
+  <section class="auth-panel"><div class="auth-card"><span class="eyebrow">WELCOME BACK</span><h2>Sign in</h2><p class="muted">Use your account to continue.</p>
+    <div class="alert success" th:if="${param.registered}">Account created. You can sign in now.</div>
+    <div class="alert success" th:if="${param.logout}">You have been signed out.</div>
+    <div class="alert error" th:if="${param.error}">Email or password is incorrect.</div>
+    <form th:action="@{/login}" method="post" class="form-stack">
+      <label>Email address<input type="email" name="username" placeholder="you@example.com" autocomplete="email" required autofocus></label>
+      <label>Password<input type="password" name="password" placeholder="Your password" autocomplete="current-password" required></label>
+      <button class="btn btn-primary btn-wide" type="submit">Sign in <span>→</span></button>
+    </form>
+    <p class="auth-switch">New here? <a th:href="@{/register}">Create an account</a></p>
+  </div><p class="auth-legal">Your resume data is associated with your account.</p></section>
+</div></body></html>
