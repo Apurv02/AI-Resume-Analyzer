@@ -27,8 +27,6 @@ An AI-assisted resume analysis web application. Users can upload a text-based PD
 - Maven
 - HTML, CSS and a small amount of browser-native JavaScript (confirmation only)
 
-This application does not use React, Node.js, npm, Express or Vite.
-
 ## Requirements
 
 - JDK 17+
